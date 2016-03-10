@@ -1,5 +1,12 @@
+[github]
+	user = phy1729
+[push]
+	default = upstream
 [user]
 	email = thepaperpilot@gmail.com
 	name = thepaperpilot
 [core]
 	autocrlf = input
+	editor = nano
+[color]
+	ui = true
