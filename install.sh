@@ -52,6 +52,8 @@ files=(.Xdefaults
 .config/htop/htoprc
 .config/i3/config
 .IdeaIC15/config/
+.mozilla/firefox/thepaperpilot/
+.mozilla/firefox/profiles.ini
 bin/telegram
 Pictures/depth.jpg)
 
