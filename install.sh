@@ -51,10 +51,11 @@ files=(.Xdefaults
 .config/gtk-3.0/bookmarks
 .config/htop/htoprc
 .config/i3/config
+.IdeaIC15/config/
 bin/telegram
 Pictures/depth.jpg)
 
 for file in "${files[@]}"; do
-    mv ~/"$file" ~/.backup/"${file##*/}"
+    [ -e "$file" ] && mv ~/"$file" ~/.backup/"${file##*/}"
     ln -s "$DIR/$file" ~/"$file"
 done

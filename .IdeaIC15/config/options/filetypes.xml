@@ -1,0 +1,9 @@
+<application>
+  <component name="FileTypeManager" version="16">
+    <extensionMap>
+      <mapping pattern="core" type="PLAIN_TEXT" />
+      <mapping pattern="MyPQ" type="PLAIN_TEXT" />
+      <mapping ext="bin" type="PLAIN_TEXT" />
+    </extensionMap>
+  </component>
+</application>
