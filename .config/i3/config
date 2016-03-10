@@ -48,7 +48,6 @@ bindsym $mod+Return exec --no-startup-id urxvt
 bindsym $mod+Shift+q kill
 
 bindsym Super_L exec --no-startup-id rofi -show run -bg '#383C4A' -fg '#FFFFFF' -hlbg '#000000' -hlfg '#36C3F9' -bc '#36C3F9' -bw 0 -lines 3 -eh 2 -terminal urxvt -run-command "bash -i -c '{cmd}'" -opacity 90 -width 100 -padding 800
-#bindsym Shift+Super_L exec dmenu-frecency --read-apps
 
 bindsym $mod+Left focus left
 bindsym $mod+Right focus right
@@ -195,19 +194,11 @@ for_window [class="^.*"] border pixel 0
 
 exec xset -dpms &
 exec xset s off &
-#exec --no-startup-id xfsettingsd &
 exec --no-startup-id compton --backend glx --paint-on-overlay --glx-no-stencil --unredir-if-possible & disown
 exec --no-startup-id dunst &
 exec --no-startup-id nm-applet &
 exec --no-startup-id xfce4-panel &
 exec firefox &
-#exec pidgin &
-#exec devilspie &
-#exec nuvolaplayer3 -a google_play_music &
-#exec megasync &
 
 exec xrandr --output HDMI-0 --left-of DVI-I-1 &
-exec feh --bg-scale ~/Pictures/8072_funny_minimal.jpg &
-# exec hsetroot -solid '#404552' &
-exec dropbox start -i &
-exec sbackup
+exec feh --bg-scale ~/Pictures/depth.jpg &

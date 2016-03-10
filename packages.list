@@ -23,6 +23,9 @@ skype
 transmission
 xclip
 atom
+compton
+xfce4-panel
+rofi
 autoconf
 libxcb1-dev
 libxcb-keysyms1-dev

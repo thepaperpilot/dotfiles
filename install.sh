@@ -51,7 +51,8 @@ files=(.Xdefaults
 .config/gtk-3.0/bookmarks
 .config/htop/htoprc
 .config/i3/config
-bin/telegram)
+bin/telegram
+Pictures/depth.jpg)
 
 for file in "${files[@]}"; do
     mv ~/"$file" ~/.backup/"${file##*/}"
