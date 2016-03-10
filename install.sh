@@ -12,7 +12,8 @@ files=(.Xdefaults
 .config/htop/htoprc
 .config/i3/config)
 
-DIR=$(dirname "${BASH_SOURCE[0]}")"
+# we need the full path, so we need the readlink
+DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
 
 for file in "${files[@]}"; do
     [ -e "$file" ] && mv ~/"$file" ~/.backup/"${file##*/}"
