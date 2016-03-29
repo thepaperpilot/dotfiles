@@ -12,6 +12,9 @@ echo "anthony ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
 # PPAs
 sudo add-apt-repository -y ppa:webupd8team/atom
 sudo add-apt-repository -y ppa:mozillateam/firefox-next
+# Manually adding dropbox PPA
+sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
+sudo sh -c 'echo "deb http://linux.dropbox.com/ubuntu/ wily main" >> /etc/apt/sources.list.d/dropbox.list'
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get autoremove -y
