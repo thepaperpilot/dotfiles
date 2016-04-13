@@ -135,9 +135,9 @@ mode "$mode_resize" {
         bindsym Escape mode "default"
 }
 
-#custom hotkeys
-bindsym $mod+Control+Left exec variety -p
-bindsym $mod+Control+Right exec variety -n
+# custom hotkeys
+# bindsym $mod+Control+Left exec variety -p
+# bindsym $mod+Control+Right exec variety -n
 
 # fix graphics glitch
 new_window none
