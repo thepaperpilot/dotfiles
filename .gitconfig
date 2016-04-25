@@ -1,5 +1,5 @@
 [github]
-	user = phy1729
+	user = thepaperpilot
 [push]
 	default = upstream
 [user]
@@ -10,3 +10,14 @@
 	editor = nano
 [color]
 	ui = true
+[alias]
+	branches = branch -a
+	tags = tag
+	stashes = stash list
+	unstage = reset -q HEAD --
+	discard = checkout --
+	uncommit = reset --mixed HEAD~
+	amend = commit --amend
+	nevermind = !git reset --hard HEAD && git clean -d -f
+	graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+	precommit = diff --cached --diff-algorithm=minimal -w
