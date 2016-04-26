@@ -42,6 +42,11 @@ tar -xf /tmp/telegram.tar.xz -C /tmp/
 mv /tmp/Telegram/Telegram ~/programs/Telegram
 mv /tmp/Telegram/Updater ~/programs/Updater
 
+wget -O /tmp/emojione.zip https://github.com/eosrei/emojione-color-font/releases/download/v1.0-beta3/EmojiOneColor-SVGinOT-Linux-1.0-beta3.zip
+unzip -o /tmp/emojione.zip
+/tmp/install.sh
+fc-cache -f -v
+
 # Place config files where they need to go
 files=(.Xdefaults
 .bash_aliases

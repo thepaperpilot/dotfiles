@@ -27,6 +27,7 @@ atom
 compton
 xfce4-panel
 rofi
+ttf-bitstream-vera
 autoconf
 libxcb1-dev
 libxcb-keysyms1-dev
