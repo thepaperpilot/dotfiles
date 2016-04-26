@@ -7,7 +7,7 @@ INTELLIJ_DIR=143.2287.1
 DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
 
 # Make it so that I don't need to type my password to use sudo (because I like to think I know what I'm doing?)
-echo "anthony ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
+grep -q -F 'anthony ALL=(ALL) NOPASSWD:ALL' /etc/sudoers || echo 'anthony ALL=(ALL) NOPASSWD:ALL' | sudo tee -a /etc/sudoers
 
 # PPAs
 sudo add-apt-repository -y ppa:webupd8team/atom
