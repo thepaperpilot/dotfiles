@@ -43,7 +43,7 @@ mv /tmp/Telegram/Telegram ~/programs/Telegram
 mv /tmp/Telegram/Updater ~/programs/Updater
 
 wget -O /tmp/emojione.zip https://github.com/eosrei/emojione-color-font/releases/download/v1.0-beta3/EmojiOneColor-SVGinOT-Linux-1.0-beta3.zip
-unzip -o /tmp/emojione.zip
+unzip -o /tmp/emojione.zip -d /tmp/
 /tmp/install.sh
 fc-cache -f -v
 
