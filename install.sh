@@ -47,6 +47,9 @@ unzip -o /tmp/emojione.zip -d /tmp/
 /tmp/install.sh
 fc-cache -f -v
 
+wget -O /tmp/mmc.tar.gz https://files.multimc.org/downloads/mmc-stable-lin64.tar.gz
+tar -xf /tmp/mmc.tar.gz -C ~/programs/
+
 # Place config files where they need to go
 files=(.Xdefaults
 .bash_aliases
@@ -61,7 +64,10 @@ files=(.Xdefaults
 .config/i3/config
 .IdeaIC15/config/
 bin/telegram
-Pictures/depth.jpg)
+bin/multimc
+Pictures/depth.jpg
+Pictures/barsl.jpg
+Pictures/barsr.jpg)
 
 for file in "${files[@]}"; do
     [ -e "$file" ] && mv ~/"$file" ~/.backup/"${file##*/}"

@@ -201,5 +201,5 @@ exec --no-startup-id xfce4-panel &
 exec --no-startup-id dropbox start -i &&
 exec firefox &
 
-exec xrandr --output HDMI-0 --left-of DVI-I-1 &
-exec feh --bg-scale ~/Pictures/depth.jpg &
+exec xrandr --output HDMI-0 --left-of DVI-D-0 &
+exec feh --bg-scale ~/Pictures/barsl.jpg --bg-scale ~/Pictures/barsr.jpg &
