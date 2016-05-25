@@ -7,7 +7,7 @@ INTELLIJ_DIR=143.2287.1
 DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
 
 # Make it so that I don't need to type my password to use sudo (because I like to think I know what I'm doing?)
-grep -q -F 'anthony ALL=(ALL) NOPASSWD:ALL' /etc/sudoers || echo 'anthony ALL=(ALL) NOPASSWD:ALL' | sudo tee -a /etc/sudoers
+sudo grep -q -F 'anthony ALL=(ALL) NOPASSWD:ALL' /etc/sudoers || echo 'anthony ALL=(ALL) NOPASSWD:ALL' | sudo tee -a /etc/sudoers
 
 # PPAs
 sudo add-apt-repository -y ppa:webupd8team/atom
@@ -44,7 +44,7 @@ mv /tmp/Telegram/Updater ~/programs/Updater
 
 wget -O /tmp/emojione.zip https://github.com/eosrei/emojione-color-font/releases/download/v1.0-beta3/EmojiOneColor-SVGinOT-Linux-1.0-beta3.zip
 unzip -o /tmp/emojione.zip -d /tmp/
-/tmp/install.sh
+(cd /tmp/ && exec /tmp/install.sh)
 fc-cache -f -v
 
 wget -O /tmp/mmc.tar.gz https://files.multimc.org/downloads/mmc-stable-lin64.tar.gz

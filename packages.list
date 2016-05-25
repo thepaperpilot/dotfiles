@@ -28,6 +28,7 @@ compton
 xfce4-panel
 rofi
 ttf-bitstream-vera
+gnome-calculator
 autoconf
 libxcb1-dev
 libxcb-keysyms1-dev
