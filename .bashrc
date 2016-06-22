@@ -107,3 +107,5 @@ export JAVA_HOME=/usr/lib/jvm/default-java
 # export PATH=$JAVA_HOME/bin:$PATH
 
 export PS1="\[$(tput bold)\]\[\e[32m\]\w\[\e[0m\]\[$(tput sgr0)\] \\$ \[$(tput sgr0)\]"
+
+export PATH="/home/anthony/.local/bin:/home/anthony/programs/anaconda/bin:$PATH"

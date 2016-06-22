@@ -22,6 +22,9 @@ sudo apt-get autoremove -y
 # Install packages
 cat packages.list | xargs sudo apt-get -y install
 
+# Install atom packages
+cat atom.list | xargs apm install
+
 # Create folders where they're needed
 mkdir ~/programs/
 mkdir ~/.backup/
@@ -49,6 +52,14 @@ fc-cache -f -v
 
 wget -O /tmp/mmc.tar.gz https://files.multimc.org/downloads/mmc-stable-lin64.tar.gz
 tar -xf /tmp/mmc.tar.gz -C ~/programs/
+
+wget -O /tmp/anaconda.sh http://repo.continuum.io/archive/Anaconda2-4.0.0-Linux-x86_64.sh
+bash /tmp/anaconda.sh -b -p ~/programs/anaconda
+export PATH="/home/anthony/.local/bin:/home/anthony/programs/anaconda/bin:$PATH"
+pip install --upgrade pip jupyter jupyter_kernel_gateway
+# path: /home/anthony/.local/bin/jupyter
+# it's installed in anaconda, which is great, but you can't install the kernel gateway on that version :(
+PYTHON=python2 apm install jupyter-notebook
 
 # Place config files where they need to go
 files=(.Xdefaults
