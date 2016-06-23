@@ -20,4 +20,6 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-PATH="/usr/games:$PATH"
+if [ -d "/usr/games" ] ; then
+    PATH="/usr/games:$PATH"
+fi

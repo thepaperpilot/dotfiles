@@ -39,7 +39,7 @@ URxvt*secondaryScroll:true
 URxvt*.internalBorder: 15
 
 ! tangoesque scheme
-URxvt*background: #404552
+URxvt*background: #3E515A
 URxvt*foreground: #36C3F9
 
 ## how many lines you want it to save per session

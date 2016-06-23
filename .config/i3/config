@@ -47,7 +47,8 @@ bindsym $mod+Return exec --no-startup-id urxvt
 
 bindsym $mod+Shift+q kill
 
-bindsym Super_L exec --no-startup-id rofi -show run -bg '#383C4A' -fg '#FFFFFF' -hlbg '#000000' -hlfg '#36C3F9' -bc '#36C3F9' -bw 0 -lines 3 -eh 2 -terminal urxvt -run-command "bash -i -c '{cmd}'" -opacity 90 -width 100 -padding 800
+# 60 is the lowest number I could use on my 1080p monitor. I think there's a better way?
+bindsym Super_L exec --no-startup-id rofi -show run -bg '#383C4A' -fg '#FFFFFF' -hlbg '#000000' -hlfg '#36C3F9' -bc '#36C3F9' -bw 0 -lines 3 -eh 2 -terminal urxvt -run-command "bash -i -c '{cmd}'" -opacity 90 -width 100 -padding $(($(xwininfo -root |awk '/Height/ { print $2}')/2-60))
 
 bindsym $mod+Left focus left
 bindsym $mod+Right focus right
@@ -65,9 +66,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen
 bindsym $mod+g fullscreen global
 
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+e layout toggle split
 
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
@@ -111,12 +112,6 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master 1+ toggle
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
-# screenshot
-# bindsym --release Print exec scrot $HOME/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
-# bindsym --release Shift+Print exec scrot -s $HOME/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
-
-bindsym $mod+n exec --no-startup-id thunar
-
 # resize window (you can also use the mouse for that)
 set $mode_resize resize
 bindsym $mod+r mode "$mode_resize"
@@ -141,6 +136,7 @@ mode "$mode_resize" {
 bindsym --release Print exec shutter -f
 bindsym --release Shift+Print exec shutter -w
 bindsym --release Control+Print exec shutter -s
+bindsym --release $mod+shift+e exec logout-menu
 
 # fix graphics glitch
 new_window none
@@ -198,7 +194,6 @@ for_window [class="^.*"] border pixel 0
 exec xset -dpms &
 exec xset s off &
 exec --no-startup-id compton --backend glx --paint-on-overlay --glx-no-stencil --unredir-if-possible & disown
-exec --no-startup-id dunst &
 exec --no-startup-id nm-applet &
 exec --no-startup-id xfce4-panel &
 exec --no-startup-id dropbox start -i &&
