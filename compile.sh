@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Variables
 INTELLIJ_VERSION=15.0.4
 # dependent on version, no easy way to not hardcode this

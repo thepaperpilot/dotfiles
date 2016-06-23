@@ -24,6 +24,8 @@ sudo bash install.sh
 
 sudo bash compile.sh
 
+sudo bash conda.sh
+
 sudo bash config.sh
 
 sudo bash dconf.sh
