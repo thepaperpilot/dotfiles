@@ -1,6 +1,6 @@
 #!/bin/bash
 
-res=$(rofi -dmenu -bg '#000000' -fg '#FF0000' -hlbg '#000000' -hlfg '#36C3F9' -bc '#36C3F9' -bw 0 -lines 3 -eh 2 -terminal urxvt -run-command "bash -i -c '{cmd}'" -opacity 90 -width 100 -padding $(($(xwininfo -root |awk '/Height/ { print $2}')/2-60)) < ~/.dmenu-i3exit)
+res=$(rofi -dmenu -bg '#000000' -fg '#FF0000' -hlbg '#000000' -hlfg '#36C3F9' -bc '#36C3F9' -bw 0 -lines 3 -eh 2 -terminal urxvt -run-command "bash -i -c '{cmd}'" -opacity 90 -width 100 -padding $(($(xwininfo -root |awk '/Height/ { print $2}')/2-80)) < ~/.dmenu-i3exit)
 
 if [ $res = "logout" ]; then
     i3-msg exit
