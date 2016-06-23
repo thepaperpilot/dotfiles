@@ -47,8 +47,7 @@ bindsym $mod+Return exec --no-startup-id urxvt
 
 bindsym $mod+Shift+q kill
 
-# 60 is the lowest number I could use on my 1080p monitor. I think there's a better way?
-bindsym Super_L exec --no-startup-id rofi -show run -bg '#383C4A' -fg '#FFFFFF' -hlbg '#000000' -hlfg '#36C3F9' -bc '#36C3F9' -bw 0 -lines 3 -eh 2 -terminal urxvt -run-command "bash -i -c '{cmd}'" -opacity 90 -width 100 -padding $(($(xwininfo -root |awk '/Height/ { print $2}')/2-60))
+bindsym Super_L exec --no-startup-id rofi -show run -bg '#383C4A' -fg '#FFFFFF' -hlbg '#000000' -hlfg '#36C3F9' -bc '#36C3F9' -bw 0 -lines 3 -eh 2 -terminal urxvt -run-command "bash -i -c '{cmd}'" -opacity 90 -width 100 -padding $(($(xwininfo -root |awk '/Height/ { print $2}')/2-80))
 
 bindsym $mod+Left focus left
 bindsym $mod+Right focus right
