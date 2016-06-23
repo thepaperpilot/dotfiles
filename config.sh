@@ -8,6 +8,7 @@ echo "$DIR"
 files=(.Xdefaults
 .bash_aliases
 .bashrc
+.dmenu-i3exit
 .gitconfig
 .gtkrc-2.0
 .profile
