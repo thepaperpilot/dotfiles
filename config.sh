@@ -13,6 +13,7 @@ files=(.Xdefaults
 .gtkrc-2.0
 .profile
 .config/compton.conf
+.config/Google\ Play\ Music\ Desktop\ Player/json_store/.settings.json
 .config/gtk-3.0/settings.ini
 .config/gtk-3.0/bookmarks
 .config/htop/htoprc

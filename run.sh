@@ -8,6 +8,8 @@ mkdir ~/bin
 mkdir ~/programs/
 mkdir ~/.backup/
 mkdir ~/.atom
+mkdir ~/.config/Google Play Music Desktop Player
+mkdir ~/.config/Google Play Music Desktop Player/json_store
 mkdir ~/.config/gtk-3.0
 mkdir ~/.config/i3
 mkdir ~/.config/xfce4
@@ -22,7 +24,7 @@ mkdir ~/.mozilla/firefox/thepaperpilot/
 
 sudo bash install.sh
 
-sudo bash compile.sh
+sudo bash manual.sh
 
 sudo bash config.sh
 

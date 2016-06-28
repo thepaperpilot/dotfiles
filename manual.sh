@@ -60,3 +60,6 @@ xft-antialias=true
 xft-dpi=96
 xft-hintstyle=slight
 xft-rgba=rgb" > /etc/lightdm/lightdm-webkit-greeter.conf
+
+wget -O /tmp/gpm.deb https://github.com/MarshallOfSound/Google-Play-Music-Desktop-Player-UNOFFICIAL-/releases/download/v3.2.5/google-play-music-desktop-player_3.2.5_amd64.deb
+sudo gdebi /tmp/gpm.deb --n
