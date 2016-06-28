@@ -20,6 +20,9 @@ numix-icon-theme-circle
 adapta-gtk-theme
 shutter
 python-pip
+latexmk
+pandoc
+texlive-full
 rxvt-unicode-256color
 samba
 scrot
