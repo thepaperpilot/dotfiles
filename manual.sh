@@ -15,6 +15,10 @@ git clone https://www.github.com/Airblader/i3 ~/programs/i3-gaps
 make -C ~/programs/i3-gaps/
 sudo make install -C ~/programs/i3-gaps/
 
+git clone https://github.com/Arcaena/i3lock-color.git ~/programs/i3lock-color
+make -C ~/programs/i3lock-color
+sudo make install -C ~/programs/i3lock-color
+
 wget -O /tmp/intellij.tar.gz https://download.jetbrains.com/idea/ideaIC-$INTELLIJ_VERSION.tar.gz
 tar -xf /tmp/intellij.tar.gz -C /tmp/
 rm -r ~/programs/idea

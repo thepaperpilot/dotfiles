@@ -51,3 +51,12 @@ libxkbcommon-dev
 libxkbcommon-x11-dev
 xutils-dev
 libtool
+pkg-config
+libpam-dev
+libcairo-dev
+libx11-dev
+libx11-xcb-dev
+libxkbcommon0
+libxkbcommon-x11-0
+libxcb-dpms0-dev
+libxcb-image0-dev

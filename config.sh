@@ -21,9 +21,12 @@ files=(.Xdefaults
 .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml
 .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 .IdeaIC15/config/
-bin/telegram
-bin/multimc
+bin/lock
+bin/lock.png
 bin/logout-menu
+bin/multimc
+bin/telegram
+bin/text.png
 Pictures/depth.jpg
 Pictures/barsl.jpg
 Pictures/barsr.jpg
