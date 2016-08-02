@@ -13,9 +13,9 @@
         max: 1000
     screenShake: {}
   "atom-beautify":
-    _analyticsUserId: "78e84dd5-6dfd-47d7-97c4-9027243b309b"
     general:
-      _analyticsUserId: "9f451c0a-8e35-4795-86bb-17e945354314"
+      _analyticsUserId: "78e84dd5-6dfd-47d7-97c4-9027243b309b"
+  "atom-html-preview": {}
   "atom-markdown-katex":
     useKaTeX: false
   "atom-material-ui":

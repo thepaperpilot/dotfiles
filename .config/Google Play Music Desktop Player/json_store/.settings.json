@@ -6,15 +6,15 @@
     "uuid": "40dd6878-c724-493f-82a3-6c65de3b77a0",
     "maximized": false,
     "position": [
-        2561,
-        -10
+        2742,
+        94
     ],
     "size": [
-        2559,
-        1439
+        2206,
+        1255
     ],
     "welcomed": "3.2.5",
-    "lastPage": "https://play.google.com/music/listen#/now",
+    "lastPage": "https://play.google.com/music/listen#/wms",
     "theme": true,
     "miniAlwaysOnTop": true,
     "hotkeys": {
@@ -28,8 +28,8 @@
         "decreaseVolume": null
     },
     "mini-position": [
-        2242,
-        1080
+        4803,
+        1102
     ],
     "mini-size": [
         310,

@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-conda install -yc conda-forge bqplot
+conda install -yc conda-forge matplotlib-venn
