@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # Variables
-INTELLIJ_VERSION=15.0.4
+INTELLIJ_VERSION=2016.1.4
 # dependent on version, no easy way to not hardcode this
-INTELLIJ_DIR=143.2287.1
+INTELLIJ_DIR=145.2070.6
 
 # Download and compile software
 git clone --recursive https://github.com/Airblader/xcb-util-xrm.git ~/programs/xcb-util-xrm
@@ -24,11 +24,6 @@ tar -xf /tmp/intellij.tar.gz -C /tmp/
 rm -r ~/programs/idea
 mv /tmp/idea-IC-$INTELLIJ_DIR ~/programs/idea
 ln -s ~/programs/idea/bin/idea.sh ~/bin/idea
-
-wget -O /tmp/telegram.tar.xz https://tdesktop.com/linux
-tar -xf /tmp/telegram.tar.xz -C /tmp/
-mv /tmp/Telegram/Telegram ~/programs/Telegram
-mv /tmp/Telegram/Updater ~/programs/Updater
 
 wget -O /tmp/emojione.zip https://github.com/eosrei/emojione-color-font/releases/download/v1.0-beta3/EmojiOneColor-SVGinOT-Linux-1.0-beta3.zip
 unzip -o /tmp/emojione.zip -d /tmp/
