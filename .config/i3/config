@@ -203,7 +203,7 @@ exec --no-startup-id dropbox start -i &&
 exec --no-startup-id google-play-music-desktop-player &
 exec firefox &
 
-exec xrandr --output HDMI-0 --right-of DVI-D-0 &
+exec xrandr --output HDMI-0 --left-of DP-0 &
 exec sudo cpupower frequency-set -g powersave &
 exec xfce4-power-manager &
-exec feh --bg-scale ~/Pictures/barsr.jpg --bg-scale ~/Pictures/barsl.jpg &
+exec feh --bg-scale ~/Pictures/barsl.jpg --bg-scale ~/Pictures/barsr.jpg &
