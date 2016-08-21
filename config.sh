@@ -26,7 +26,6 @@ bin/lock
 bin/lock.png
 bin/logout-menu
 bin/multimc
-bin/telegram
 bin/text.png
 Pictures/depth.jpg
 Pictures/barsl.jpg
