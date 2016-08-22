@@ -44,7 +44,9 @@ bash /tmp/anaconda.sh -b -p ~/programs/anaconda
 export PATH="/home/anthony/programs/anaconda/bin:$PATH"
 
 sudo echo "[SeatDefaults]
-greeter-session=lightdm-webkit-greeter" > /etc/lightdm/lightdm.conf
+greeter-session=lightdm-webkit-greeter
+display-setup-script=xrandr --output DP-0 --same-as HDMI-0
+" > /etc/lightdm/lightdm.conf
 sudo git clone https://github.com/artur9010/lightdm-webkit-material.git /usr/share/lightdm-webkit/themes/material
 sudo echo "#
 # background = Background file to use, either an image path or a color (e.g. #772953)

@@ -12,7 +12,7 @@ if [ $res = "shutdown" ]; then
     poweroff
 fi
 if [ $res = "sleep" ]; then
-    lock -f Ubuntu-Mono && echo mem | sudo tee /sys/power/state
+    lock -f Ubuntu-Mono && sudo pm-hibernate
 fi
 if [ $res = "lock" ]; then
     lock -f Ubuntu-Mono
