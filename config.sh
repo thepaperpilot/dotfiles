@@ -32,7 +32,8 @@ Pictures/barsl.jpg
 Pictures/barsr.jpg
 .atom/config.cson
 .mozilla/firefox/profiles.ini
-.mozilla/firefox/thepaperpilot/stylish.sqlite)
+.mozilla/firefox/thepaperpilot/stylish.sqlite
+.ssh/config)
 
 for file in "${files[@]}"; do
     echo mv ~/"$file" ~/.backup/"${file##*/}"
@@ -40,3 +41,8 @@ for file in "${files[@]}"; do
     [ -e "$file" ] && mv ~/"$file" ~/.backup/"${file##*/}"
     ln -s "$DIR/$file" ~/"$file"
 done
+
+chmod 600 ~/projects/private/misc/my-key.pem
+ssh-keyscan -H ec2-52-43-183-109.us-west-2.compute.amazonaws.com >> ~/.ssh/known_hosts
+ssh ec2 mkdir -p .terminfo/r
+scp /usr/share/terminfo/r/rxvt-unicode* ec2:.terminfo/r/

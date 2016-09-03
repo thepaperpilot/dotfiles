@@ -1,6 +1,7 @@
-zen
 activate-power-mode
 atom-beautify
+atom-html-preview
+atom-material-ui
 autoclose-html
 autocomplete-emojis
 autocomplete-paths
@@ -33,4 +34,4 @@ minimap
 pdf-view
 pretty-json
 preview-inline
-atom-html-preview
+zen

@@ -3,33 +3,22 @@
     "enableJSONApi": true,
     "nativeFrame": true,
     "enableWindowTitleInfo": false,
-    "uuid": "40dd6878-c724-493f-82a3-6c65de3b77a0",
+    "uuid": "4f35e53c-5cb4-41dd-9591-85a0aac8df98",
+    "welcomed": "3.2.5",
     "maximized": false,
     "position": [
-        253,
-        93
+        3161,
+        229
     ],
     "size": [
-        810,
-        657
+        1400,
+        858
     ],
-    "welcomed": "3.2.5",
     "lastPage": "https://play.google.com/music/listen#/now",
     "theme": true,
-    "miniAlwaysOnTop": true,
-    "hotkeys": {
-        "playPause": null,
-        "stop": null,
-        "previousTrack": null,
-        "nextTrack": null,
-        "thumbsUp": null,
-        "thumbsDown": null,
-        "increaseVolume": null,
-        "decreaseVolume": null
-    },
     "mini-position": [
-        1603,
-        741
+        4795,
+        1093
     ],
     "mini-size": [
         310,

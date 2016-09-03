@@ -21,13 +21,32 @@ mkdir ~/.icons
 mkdir ~/.mozilla
 mkdir ~/.mozilla/firefox
 mkdir ~/.mozilla/firefox/thepaperpilot/
+mkdir ~/.ssh
 
 sudo bash install.sh
+install=$?
+
+if [ install -ne 0 ]; then
+    echo "install.sh did not complete successfully. Cannot continue."
+    return 1;
+fi
 
 sudo bash manual.sh
+manual=$?
 
 sudo bash conda.sh
+conda=$?
 
 sudo bash config.sh
+config=$?
 
 sudo bash dconf.sh
+dconf=$?
+
+printf "\nFinished running.\n"
+printf "manual.sh returned $manual\n"
+printf "conda.sh returned $conda\n"
+printf "config.sh returned $config\n"
+printf "dconf.sh returned $dconf\n"
+
+printf "\nYou should manually set up your vpn using using these instructions: https://support.ipvanish.com/customer/portal/articles/1978292-openvpn-ubuntu-networkmanager\n"

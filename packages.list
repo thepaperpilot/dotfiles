@@ -35,6 +35,7 @@ xfce4-panel
 rofi
 ttf-bitstream-vera
 gnome-calculator
+network-manager-openvpn
 autoconf
 libxcb1-dev
 libxcb-keysyms1-dev
