@@ -32,6 +32,7 @@ atom
 tmux
 compton
 xfce4-panel
+notify-osd
 rofi
 ttf-bitstream-vera
 gnome-calculator
