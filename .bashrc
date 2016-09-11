@@ -35,15 +35,6 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -107,5 +98,3 @@ export JAVA_HOME=/usr/lib/jvm/default-java
 # export PATH=$JAVA_HOME/bin:$PATH
 
 export PS1="\[$(tput bold)\]\[\e[32m\]\w\[\e[0m\]\[$(tput sgr0)\] \\$ \[$(tput sgr0)\]"
-
-export PATH="/home/anthony/programs/anaconda/bin:$PATH"

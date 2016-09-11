@@ -21,14 +21,9 @@
   "atom-material-ui":
     colors:
       abaseColor:
-        red: 71
-        green: 87
-        blue: 93
-        alpha: 1
-      accentColor:
-        red: 111
-        green: 156
-        blue: 59
+        red: 126
+        green: 126
+        blue: 126
         alpha: 1
       predefinedColor: "Grey"
     fonts: {}

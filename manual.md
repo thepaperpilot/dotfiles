@@ -1,48 +1,104 @@
-#!/usr/bin/env bash
+# i3-gaps
 
-# Variables
-INTELLIJ_VERSION=2016.1.4
-# dependent on version, no easy way to not hardcode this
-INTELLIJ_DIR=145.2070.6
+> xcb-util-xrm
+>
+> ```bash
+> git clone --recursive https://github.com/Airblader/xcb-util-xrm.git ~/programs/xcb-util-xrm
+> sh ~/programs/xcb-util-xrm/autogen.sh
+> make -C ~/programs/xcb-util-xrm
+> sudo make install -C ~/programs/xcb-util-xrm
+> ```
 
-# Download and compile software
-git clone --recursive https://github.com/Airblader/xcb-util-xrm.git ~/programs/xcb-util-xrm
-sh ~/programs/xcb-util-xrm/autogen.sh
-make -C ~/programs/xcb-util-xrm
-sudo make install -C ~/programs/xcb-util-xrm
+> Other dependencies:
+>
+> Ubuntu:
+>
+> ```bash
+> sudo apt-get install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev
+> ```
 
+```bash
 git clone https://www.github.com/Airblader/i3 ~/programs/i3-gaps
 make -C ~/programs/i3-gaps/
 sudo make install -C ~/programs/i3-gaps/
+```
 
+## i3-lock
+
+```bash
 git clone https://github.com/Arcaena/i3lock-color.git ~/programs/i3lock-color
 make -C ~/programs/i3lock-color
 sudo make install -C ~/programs/i3lock-color
+```
 
+## lemonbar
+
+```bash
+git clone https://github.com/krypt-n/bar.git ~/programs/lemonbar
+make -C ~/programs/lemonbar
+sudo make install -C ~/programs/lemonbar
+```
+
+## pulseaudio-ctl
+
+```bash
+git clone https://github.com/graysky2/pulseaudio-ctl.git ~/programs/pulseaudio-ctl
+make -C ~/programs/pulseaudio-ctl
+sudo make install -C ~/programs/pulseaudio-ctl
+```
+
+# IntelliJ Idea
+
+```bash
+INTELLIJ_VERSION=2016.1.4
+INTELLIJ_DIR=145.2070.6
 wget -O /tmp/intellij.tar.gz https://download.jetbrains.com/idea/ideaIC-$INTELLIJ_VERSION.tar.gz
 tar -xf /tmp/intellij.tar.gz -C /tmp/
 rm -r ~/programs/idea
 mv /tmp/idea-IC-$INTELLIJ_DIR ~/programs/idea
 ln -s ~/programs/idea/bin/idea.sh ~/bin/idea
+```
 
+# EmojiOne
+
+```bash
 wget -O /tmp/emojione.zip https://github.com/eosrei/emojione-color-font/releases/download/v1.0-beta3/EmojiOneColor-SVGinOT-Linux-1.0-beta3.zip
 unzip -o /tmp/emojione.zip -d /tmp/
 (cd /tmp/ && exec /tmp/install.sh)
 fc-cache -f -v
+```
 
+# Neutral Icons
+
+```bash
 wget -O /tmp/neutral.tar.gz https://dl.opendesktop.org/api/files/download?id=1460735305
 tar -xf /tmp/neutral.tar.gz -C ~/.icons/
+```
 
+# MultiMC
+
+```bash
 wget -O /tmp/mmc.tar.gz https://files.multimc.org/downloads/mmc-stable-lin64.tar.gz
 tar -xf /tmp/mmc.tar.gz -C ~/programs/
+```
 
+# Franz
+
+```bash
 wget -O /tmp/franz.tgz https://github.com/meetfranz/franz-app/releases/download/4.0.2/Franz-linux-x64-4.0.2.tgz
 tar -xf /tmp/franz.tgz -C ~/programs/
+```
 
+# Anaconda
+
+```bash
 wget -O /tmp/anaconda.sh http://repo.continuum.io/archive/Anaconda2-4.0.0-Linux-x86_64.sh
 bash /tmp/anaconda.sh -b -p ~/programs/anaconda
-export PATH="/home/anthony/programs/anaconda/bin:$PATH"
+```
 
+# LightDM Greeter
+
+```bash
 sudo echo "[SeatDefaults]
 greeter-session=lightdm-webkit-greeter
 display-setup-script=xrandr --output DP-0 --same-as HDMI-0
@@ -66,6 +122,4 @@ xft-antialias=true
 xft-dpi=96
 xft-hintstyle=slight
 xft-rgba=rgb" > /etc/lightdm/lightdm-webkit-greeter.conf
-
-wget -O /tmp/gpm.deb https://github.com/MarshallOfSound/Google-Play-Music-Desktop-Player-UNOFFICIAL-/releases/download/v3.2.5/google-play-music-desktop-player_3.2.5_amd64.deb
-sudo gdebi /tmp/gpm.deb --n
+```

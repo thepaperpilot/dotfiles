@@ -4,6 +4,23 @@ DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
 
 echo "$DIR"
 
+mkdir ~/bin
+mkdir ~/programs/
+mkdir ~/.backup/
+mkdir ~/.atom
+mkdir ~/.config/lemonbar
+mkdir ~/.config/Google Play Music Desktop Player
+mkdir ~/.config/Google Play Music Desktop Player/json_store
+mkdir ~/.config/gtk-3.0
+mkdir ~/.config/i3
+mkdir ~/.IdeaIC15
+mkdir ~/.IdeaIC15/config
+mkdir ~/.icons
+mkdir ~/.mozilla
+mkdir ~/.mozilla/firefox
+mkdir ~/.mozilla/firefox/thepaperpilot
+mkdir ~/.ssh
+
 # Place config files where they need to go
 files=(.Xdefaults
 .bash_aliases
@@ -13,6 +30,8 @@ files=(.Xdefaults
 .gtkrc-2.0
 .profile
 .config/compton.conf
+.config/lemonbar/bottom
+.config/lemonbar/setup
 .config/Google\ Play\ Music\ Desktop\ Player/json_store/.settings.json
 .config/gtk-3.0/settings.ini
 .config/gtk-3.0/bookmarks
@@ -21,6 +40,7 @@ files=(.Xdefaults
 .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml
 .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 .IdeaIC15/config/
+bin/battery.sh
 bin/franz
 bin/lock
 bin/lock.png
@@ -41,7 +61,3 @@ for file in "${files[@]}"; do
     [ -e "$file" ] && mv ~/"$file" ~/.backup/"${file##*/}"
     ln -s "$DIR/$file" ~/"$file"
 done
-
-ssh-keyscan -H ec2-52-43-183-109.us-west-2.compute.amazonaws.com >> ~/.ssh/known_hosts
-ssh ec2 mkdir -p .terminfo/r
-scp /usr/share/terminfo/r/rxvt-unicode* ec2:.terminfo/r/

@@ -166,25 +166,6 @@ for_window [title="Google Play Music Desktop Player"] sticky enable
 assign [class="(?i)pidgin"]      $ws2
 assign [class="(?i)nuvolaplayer3"]      $ws2
 
-#bar {
-#        status_command i3status
-#        position top
-#        font pango:Tewi, Icons 8
-#        strip_workspace_numbers yes
-#        separator_symbol ":"
-#        colors {
-#                statusline         $white
-#                background         $pitch
-#                separator          $darkgreen
-#
-##                                  BORDER      BACKGROUND  TEXT
-#                focused_workspace  $background $background $darkgreen
-#                inactive_workspace $background $background $white
-#                active_workspace   $background $background $white
-#                urgent_workspace   $red        $red        $white
-#        }
-#}
-
 gaps inner 16
 gaps outer 0
 
@@ -196,14 +177,13 @@ for_window [class="^.*"] border pixel 0
 
 exec xset -dpms &
 exec xset s off &
-exec --no-startup-id compton --backend glx --paint-on-overlay --glx-no-stencil --unredir-if-possible & disown
-exec --no-startup-id nm-applet &
-exec --no-startup-id xfce4-panel &
-exec --no-startup-id dropbox start -i &
+exec --no-startup-id compton & disown
+exec --no-startup-id ~/.config/lemonbar/bottom &
+exec mopidy &
+exec urxvt -e ncmpcpp & disown
 exec franz &
 exec firefox &
 
 exec xrandr --output HDMI-0 --primary --left-of DP-0 &
 exec sudo cpupower frequency-set -g powersave &
-exec xfce4-power-manager &
 exec feh --bg-scale ~/Pictures/barsl.jpg --bg-scale ~/Pictures/barsr.jpg &
