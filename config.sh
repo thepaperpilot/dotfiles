@@ -42,7 +42,6 @@ for file in "${files[@]}"; do
     ln -s "$DIR/$file" ~/"$file"
 done
 
-chmod 600 ~/projects/private/misc/my-key.pem
 ssh-keyscan -H ec2-52-43-183-109.us-west-2.compute.amazonaws.com >> ~/.ssh/known_hosts
 ssh ec2 mkdir -p .terminfo/r
 scp /usr/share/terminfo/r/rxvt-unicode* ec2:.terminfo/r/

@@ -15,6 +15,7 @@ highlight-line
 indent-guide-improved
 jekyll
 language-gradle
+language-jekyll
 language-latex
 latex
 latexer

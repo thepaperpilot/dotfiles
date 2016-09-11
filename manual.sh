@@ -36,7 +36,7 @@ tar -xf /tmp/neutral.tar.gz -C ~/.icons/
 wget -O /tmp/mmc.tar.gz https://files.multimc.org/downloads/mmc-stable-lin64.tar.gz
 tar -xf /tmp/mmc.tar.gz -C ~/programs/
 
-wget -O /tmp/franz.tgz https://github.com/imprecision/franz-app/releases/download/3.1.1/Franz-linux-x64-3.1.1.tgz
+wget -O /tmp/franz.tgz https://github.com/meetfranz/franz-app/releases/download/4.0.2/Franz-linux-x64-4.0.2.tgz
 tar -xf /tmp/franz.tgz -C ~/programs/
 
 wget -O /tmp/anaconda.sh http://repo.continuum.io/archive/Anaconda2-4.0.0-Linux-x86_64.sh

@@ -67,5 +67,4 @@ URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
 URxvt.perl-ext-common: default,clipboard
 
-Xcursor.size: 8
 Xcursor.theme: Adwaita
