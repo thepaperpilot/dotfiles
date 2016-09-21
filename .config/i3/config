@@ -1,5 +1,5 @@
 # vim:filetype=i3
-set $mod Mod1
+set $mod Mod4
 
 set $black       #2c2c2c
 set $darkblack   #737373
@@ -47,7 +47,7 @@ bindsym $mod+Return exec --no-startup-id urxvt
 
 bindsym $mod+Shift+q kill
 
-bindsym Super_L exec --no-startup-id rofi -show run -bg '#383C4A' -fg '#FFFFFF' -hlbg '#000000' -hlfg '#36C3F9' -bc '#36C3F9' -bw 0 -lines 3 -eh 2 -terminal urxvt -run-command "bash -i -c '{cmd}'" -opacity 90 -width 100 -padding $(($(xwininfo -root |awk '/Height/ { print $2}')/2-75)) -fuzzy -hide-scrollbar
+bindsym $mod+d exec --no-startup-id rofi -show run -bw 0 -lines 3 -eh 2 -terminal urxvt -run-command "bash -i -c '{cmd}'" -width 32 -padding 10 -fuzzy -hide-scrollbar -separator-style none
 
 bindsym $mod+Left focus left
 bindsym $mod+Right focus right
@@ -104,9 +104,13 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master 1+ toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 5%-
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 5%+
+bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle
+
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
@@ -179,11 +183,8 @@ exec xset -dpms &
 exec xset s off &
 exec --no-startup-id compton & disown
 exec --no-startup-id ~/.config/lemonbar/bottom &
-exec mopidy &
-exec urxvt -e ncmpcpp & disown
-exec franz &
-exec firefox &
+exec (sleep 10; mopidy) &
 
 exec xrandr --output HDMI-0 --primary --left-of DP-0 &
 exec sudo cpupower frequency-set -g powersave &
-exec feh --bg-scale ~/Pictures/barsl.jpg --bg-scale ~/Pictures/barsr.jpg &
+exec feh --bg-scale ~/Pictures/void.png &

@@ -8,8 +8,27 @@ URxvt*scrollstyle:plain
 URxvt*secondaryScroll:true
 URxvt*.internalBorder: 15
 
-URxvt*background: #3E515A
-URxvt*foreground: #36C3F9
+URxvt*foreground: white
+URxvt*background: black
+
+URxvt*color0:  #2E3436
+URxvt*color1:  #a40000
+URxvt*color2:  #4E9A06
+URxvt*color3:  #C4A000
+URxvt*color4:  #3465A4
+URxvt*color5:  #75507B
+URxvt*color6:  #ce5c00
+URxvt*color7:  #babdb9
+URxvt*color8:  #555753
+URxvt*color9:  #EF2929
+URxvt*color10: #8AE234
+URxvt*color11: #FCE94F
+URxvt*color12: #729FCF
+URxvt*color13: #AD7FA8
+URxvt*color14: #fcaf3e
+URxvt*color15: #EEEEEC
+urxvt*transparent: true
+urxvt*shading: 30
 
 URxvt*saveLines:32767
 URxvt*troughColor:#000000
@@ -22,12 +41,27 @@ URxvt*lineSpace: 1
 
 URxvt*urgentOnBell: true
 
-URxvt*perl-ext-common: default,matcher,-option-popup,-selection-popup,-realine
+URxvt*perl-ext-common: default,matcher,-option-popup,-selection-popup,-realine,clipboard
 URxvt*matcher.button: 1
 URxvt*urlLauncher: firefox
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
-URxvt.perl-ext-common: default,clipboard
 
 Xcursor.theme: Adwaita
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+! Use extended color scheme
+rofi.color-enabled:                  true
+! Color scheme for normal row
+rofi.color-normal:                   #ffffff,#525d76,#f5f5f5,#5294e2,#ffffff
+! Color scheme for urgent row
+rofi.color-urgent:                   #ffffff,#dc322f,#f5f5f5,#5294e2,#dc322f
+! Color scheme for active row
+rofi.color-active:                   #ffffff,#c2cad0,#f5f5f5,#5294e2,#c2cad0
+! Color scheme window
+rofi.color-window:                   #ffffff,#f5f5f5
+! Separator style (none, dash, solid)
+rofi.separator-style:                solid

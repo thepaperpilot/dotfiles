@@ -3,13 +3,12 @@
 source ~/.config/lemonbar/setup
 
 while true; do
-echo "$(mpd)%{r}$(battery) $SEP $(wifi_ssid) $SEP $(volume)  %{B$YELLOW_COLOR}  %{F$WIFI_COLOR}$(printf '%b' "\uf073") %{F$BACKGROUND_COLOR} $(date +'%A, %b %d')  %{B$FOREGROUND_COLOR} %{F$WIFI_COLOR} $(printf '%b' "\uf017") %{F$BACKGROUND_COLOR} $(date +'%H:%M')  %{B F-}"
+echo "$(mpd) %{r} $(battery) $SEP $(wifi_ssid) $SEP $(volume) $SEP %{B$BACKGROUND_COLOR} %{F$WIFI_COLOR} $SEP $(printf '%b' "\uf073") %{F$FOREGROUND_COLOR} $(date +'%A, %b %d') %{F$WIFI_COLOR} $SEP $(printf '%b' "\uf017") %{F$FOREGROUND_COLOR} $(date +'%I:%M') $SEP %{B F-}"
     sleep 1s
 done |
 
 lemonbar\
     -b\
-    -g "2560x30"\
+    -g "1920x30"\
     -f "$FONT1" -f "$FONT2"\
-    -B "$FOREGROUND_COLOR" \
-    -F "$BACKGROUND_COLOR" | bash
+    -F "$FOREGROUND_COLOR" | bash

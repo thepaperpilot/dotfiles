@@ -4,22 +4,19 @@ DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
 
 echo "$DIR"
 
-mkdir ~/bin
 mkdir ~/programs/
 mkdir ~/.backup/
-mkdir ~/.atom
-mkdir ~/.config/lemonbar
-mkdir ~/.config/Google Play Music Desktop Player
-mkdir ~/.config/Google Play Music Desktop Player/json_store
 mkdir ~/.config/gtk-3.0
+mkdir ~/.config/htop
 mkdir ~/.config/i3
-mkdir ~/.IdeaIC15
-mkdir ~/.IdeaIC15/config
+mkdir ~/.config/lemonbar
 mkdir ~/.icons
 mkdir ~/.mozilla
 mkdir ~/.mozilla/firefox
 mkdir ~/.mozilla/firefox/thepaperpilot
 mkdir ~/.ssh
+mkdir ~/Pictures
+mkdir ~/bin
 
 # Place config files where they need to go
 files=(.Xdefaults
@@ -32,14 +29,10 @@ files=(.Xdefaults
 .config/compton.conf
 .config/lemonbar/bottom
 .config/lemonbar/setup
-.config/Google\ Play\ Music\ Desktop\ Player/json_store/.settings.json
 .config/gtk-3.0/settings.ini
 .config/gtk-3.0/bookmarks
 .config/htop/htoprc
 .config/i3/config
-.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml
-.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
-.IdeaIC15/config/
 bin/battery.sh
 bin/franz
 bin/lock
@@ -48,9 +41,11 @@ bin/logout-menu
 bin/multimc
 bin/text.png
 Pictures/depth.jpg
+Pictures/bars.jpg
 Pictures/barsl.jpg
 Pictures/barsr.jpg
-.atom/config.cson
+Pictures/void.jpg
+Pictures/void.xcf
 .mozilla/firefox/profiles.ini
 .mozilla/firefox/thepaperpilot/stylish.sqlite
 .ssh/config)

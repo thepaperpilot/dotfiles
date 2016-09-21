@@ -97,4 +97,16 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 export JAVA_HOME=/usr/lib/jvm/default-java
 # export PATH=$JAVA_HOME/bin:$PATH
 
-export PS1="\[$(tput bold)\]\[\e[32m\]\w\[\e[0m\]\[$(tput sgr0)\] \\$ \[$(tput sgr0)\]"
+export PATH=$HOME/bin:$PATH
+
+if [ $(id -u) -eq 0 ]; then export PS1="\[$(tput bold)\]\[\e[31m\]\w\[\e[0m\]\[$(tput sgr0)\] # \[$(tput sgr0)\]"
+else export PS1="\[$(tput bold)\]\[\e[32m\]\w\[\e[0m\]\[$(tput sgr0)\] \\$ \[$(tput sgr0)\]"
+fi
+
+# for sublime text 2's markdown preview
+export BROWSER=firefox
+
+# autologin on tty1
+if [[ -z $DISPLAY && $(tty) = /dev/tty1 ]]; then
+  startx
+fi
