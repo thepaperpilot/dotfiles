@@ -1,4 +1,5 @@
 # vim:filetype=i3
+exec i3lock -c 000000 &
 set $mod Mod4
 
 set $black       #2c2c2c
@@ -170,21 +171,36 @@ for_window [title="Google Play Music Desktop Player"] sticky enable
 assign [class="(?i)pidgin"]      $ws2
 assign [class="(?i)nuvolaplayer3"]      $ws2
 
-gaps inner 16
-gaps outer 0
+# gaps inner 16
+# gaps outer 0
 
-smart_gaps on
+# smart_gaps on
 
 for_window [class="^.*"] border pixel 0
 
 # AUTOSTART
+
+# wacom settings
+
+set PEN="Wacom Intuos S 2 Pen stylus"
+set PAD="Wacom Intuos S 2 Pad pad"
+
+exec xsetwacom set "$PEN" Button 1 1 &
+exec xsetwacom set "$PEN" Button 2 +2 &
+exec xsetwacom set "$PEN" Button 3 "key ctrl z" &
+exec xsetwacom set "$PAD" Button 1 "key ctrl" &
+exec xsetwacom set "$PAD" Button 3 "key shift" &
+exec xsetwacom set "$PAD" Button 8 "key -" &
+exec xsetwacom set "$PAD" Button 9 "key shift +" &
 
 exec xset -dpms &
 exec xset s off &
 exec --no-startup-id compton & disown
 exec --no-startup-id ~/.config/lemonbar/bottom &
 exec (sleep 10; mopidy) &
+exec jekyll s --port 4001 -s ~/projects/private/startpage -d ~/projects/private/startpage/_site &
 
 exec xrandr --output HDMI-0 --primary --left-of DP-0 &
 exec sudo cpupower frequency-set -g powersave &
-exec feh --bg-scale ~/Pictures/void.png &
+# exec feh --bg-scale ~/Pictures/void.png &
+exec feh --bg-scale ~/Pictures/zelda.jpg &

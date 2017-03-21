@@ -9,7 +9,8 @@ URxvt*secondaryScroll:true
 URxvt*.internalBorder: 15
 
 URxvt*foreground: white
-URxvt*background: black
+URxvt*depth: 32
+URxvt*background: rgba:0000/0000/0200/c800
 
 URxvt*color0:  #2E3436
 URxvt*color1:  #a40000
@@ -27,8 +28,6 @@ URxvt*color12: #729FCF
 URxvt*color13: #AD7FA8
 URxvt*color14: #fcaf3e
 URxvt*color15: #EEEEEC
-urxvt*transparent: true
-urxvt*shading: 30
 
 URxvt*saveLines:32767
 URxvt*troughColor:#000000

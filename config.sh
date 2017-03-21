@@ -15,8 +15,6 @@ mkdir ~/.mozilla
 mkdir ~/.mozilla/firefox
 mkdir ~/.mozilla/firefox/thepaperpilot
 mkdir ~/.ssh
-mkdir ~/Pictures
-mkdir ~/bin
 
 # Place config files where they need to go
 files=(.Xdefaults
@@ -33,19 +31,8 @@ files=(.Xdefaults
 .config/gtk-3.0/bookmarks
 .config/htop/htoprc
 .config/i3/config
-bin/battery.sh
-bin/franz
-bin/lock
-bin/lock.png
-bin/logout-menu
-bin/multimc
-bin/text.png
-Pictures/depth.jpg
-Pictures/bars.jpg
-Pictures/barsl.jpg
-Pictures/barsr.jpg
-Pictures/void.jpg
-Pictures/void.xcf
+bin
+Pictures
 .mozilla/firefox/profiles.ini
 .mozilla/firefox/thepaperpilot/stylish.sqlite
 .ssh/config)

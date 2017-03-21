@@ -32,17 +32,17 @@ trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 
 
 volume(){
-    VOLUME=$(awk -F"[][]" '/dB/ { print $2 }' <(amixer get Master))
+    VOLUME=$(amixer get Master | awk '$0~/%/{print $5; exit;}' | tr -d '[]')
     if amixer get Master | grep -q off; then
-        echo "%{F$RED_COLOR A:amixer sset Master unmute:}$(printf '%b' "\uf026") $VOLUME%{A F-}"
+        echo "%{F$RED_COLOR A:amixer sset Master unmute:}$(printf '%b' "\uf026") $VOLUME%{A F-} $SEP $SEP"
     else
-	echo "%{F$BLUE_COLOR A:amixer sset Master mute:}$(printf '%b' "\uf028")%{F-} $VOLUME%{A}"
+	echo "%{F$BLUE_COLOR A:amixer sset Master mute:}$(printf '%b' "\uf028") $VOLUME%{A F-} $SEP $SEP"
     fi
 }
 
 mpd(){
     STATUS=$(mpc current)
-    echo "%{F$BLUE_COLOR A:mpc toggle: A3:mpc stop:} $SEP $(printf '%b' "\uf001") %{F-} $STATUS%{A A}"
+    echo "%{F$BLUE_COLOR A:mpc toggle: A3:mpc stop:} $SEP $(printf '%b' "\uf001") $SEP $STATUS%{A A F-}"
 }
 
 
@@ -50,7 +50,7 @@ wifi_ssid(){
     NAME=$(iwgetid -r)
 	IP=$(ip addr | grep wlp2s0 | sed -n 's/.*inet.\([0-9]*\.[0-9]*\.[0-9]*\.[0-9]*\).*/\1/p')
 	if [ "$NAME" != "" ]; then
-	    echo "%{F$WIFI_COLOR}$(printf '%b' "\uf1eb")%{F-} $NAME"
+	    echo "%{F$WIFI_COLOR}$(printf '%b' "\uf1eb") $NAME%{F-} $SEP $SEP"
 	fi
 }
 
@@ -58,14 +58,14 @@ battery() {
 	BATTERY=$(~/bin/battery.sh)
 	if [ "$BATTERY" != "%" ]; then
 		if acpi -a | grep -q on; then
-    		echo "%{F$GREEN_COLOR}$(printf '%b' "\uf1e6")%{F-} $BATTERY"
+    		echo "%{F$GREEN_COLOR}$(printf '%b' "\uf1e6") $BATTERY%{F-} $SEP $SEP"
 		else
-			echo "%{F$BAT_COLOR}$(printf '%b' "\uf1e6")%{F-} $BATTERY"
+			echo "%{F$BAT_COLOR}$(printf '%b' "\uf1e6") $BATTERY%{F-} $SEP $SEP"
 		fi
 	fi
 }
 
 load_avg() {
     AVGLOAD=$(cut -d " " -f 1-3 /proc/loadavg)
-    echo "%{F$BLUE_COLOR}$(printf '%b' "\f0ae")%{F-} $AVGLOAD"
+    echo "%{F$BLUE_COLOR}$(printf '%b' "\f0ae") $AVGLOAD%{F-} $SEP $SEP"
 }
