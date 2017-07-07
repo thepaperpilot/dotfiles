@@ -1,2 +1,2 @@
 #!/bin/sh
-~/programs/MultiMC/MultiMC
+nice -n 19 ~/programs/MultiMC/MultiMC

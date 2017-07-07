@@ -99,9 +99,12 @@ export JAVA_HOME=/usr/lib/jvm/default-java
 
 export PATH=$HOME/bin:$PATH
 
-if [ $(id -u) -eq 0 ]; then export PS1="\[$(tput bold)\]\[\e[31m\]\w\[\e[0m\]\[$(tput sgr0)\] # \[$(tput sgr0)\]"
-else export PS1="\[$(tput bold)\]\[\e[32m\]\w\[\e[0m\]\[$(tput sgr0)\] \\$ \[$(tput sgr0)\]"
-fi
+#if [ $(id -u) -eq 0 ]; then export PS1="\[$(tput bold)\]\[\e[31m\]\w\[\e[0m\]\[$(tput sgr0)\] # \[$(tput sgr0)\]"
+#else export PS1="\[$(tput bold)\]\[\e[32m\]\w\[\e[0m\]\[$(tput sgr0)\] \\$ \[$(tput sgr0)\]"
+#fi
+
+export PS1="\[$(tput bold)\]\w\[$(tput sgr0)\] \\$ \[$(tput sgr0)\]"
+(wal -r &)
 
 # for sublime text 2's markdown preview
 export BROWSER=firefox

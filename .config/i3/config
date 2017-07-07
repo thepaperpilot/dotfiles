@@ -19,7 +19,9 @@ set $cyan        #68a8c5
 set $darkcyan    #9ac1d9
 set $white       #f1edfb
 set $darkwhite   #f1edfb
-set $background  #133B47
+
+set_from_resource $fg i3wm.color7 $cyan
+set_from_resource $bg i3wm.color2 #133B47
 
 set $ws1  "1:1"
 set $ws2  "2:2"
@@ -38,10 +40,12 @@ force_display_urgency_hint 0 ms
 font pango:Tewi, Icons 8
 #00d8d8
 #                       BORDER     BACKGROUND TEXT   INDICATOR
-client.focused          $36C3F9    #36C3F9    $black $black
-client.unfocused        $2B2E39	   $2B2E39     $white $darkwhite
-client.focused_inactive $337C9C	   $337C9C     $white $darkwhite
-client.urgent           $red       $red       $white $red
+client.focused          $bg        $bg        $fg    $bg
+client.unfocused        $bg	   $bg        $fg    $bg
+client.focused_inactive $bg	   $bg        $fg    $bg
+client.urgent           $bg        $bg        $fg    $bg
+
+client.background       $bg
 
 floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id urxvt
@@ -171,12 +175,12 @@ for_window [title="Google Play Music Desktop Player"] sticky enable
 assign [class="(?i)pidgin"]      $ws2
 assign [class="(?i)nuvolaplayer3"]      $ws2
 
-# gaps inner 16
-# gaps outer 0
+gaps inner 16
+gaps outer 8
 
 # smart_gaps on
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 
 # AUTOSTART
 
@@ -196,11 +200,16 @@ exec xsetwacom set "$PAD" Button 9 "key shift +" &
 exec xset -dpms &
 exec xset s off &
 exec --no-startup-id compton & disown
-exec --no-startup-id ~/.config/lemonbar/bottom &
+#exec --no-startup-id ~/.config/lemonbar/bottom &
+# exec --no-startup-id polybar bottom &
 exec (sleep 10; mopidy) &
-exec jekyll s --port 4001 -s ~/projects/private/startpage -d ~/projects/private/startpage/_site &
+exec jekyll s --port 4001 -s ~/projects/private/startpage -d ~/projects/private/startpage/_site --incremental &
+## This was a runit service, but it would run in system mode and I need it to be in session mode for lemonbar and bluetooth to work
+exec pulseaudio &
+exec echo power on | bluetoothctl &
 
-exec xrandr --output HDMI-0 --primary --left-of DP-0 &
-exec sudo cpupower frequency-set -g powersave &
+# exec xrandr --output eDP1 --primary --left-of HDMI1 &
+# exec sudo cpupower frequency-set -g powersave &
 # exec feh --bg-scale ~/Pictures/void.png &
-exec feh --bg-scale ~/Pictures/zelda.jpg &
+# exec feh --bg-scale ~/Pictures/zelda2.jpg &
+exec changewal

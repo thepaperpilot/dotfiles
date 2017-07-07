@@ -1,8 +1,4 @@
 #!/bin/bash
-# Sorry, so long as I depend on twitch-chat-downloader, I can't really distribute this at large. If you *do* want to use it, make sure you clone twitch-chat-downloader to ~/projects/Twitch-Chat-Downloader
-# Also, it currently has tags really only suitable for my use cases, which I'd have to turn into a flag for general use (along with the category and language and stuff). 
-# Actually, I'm starting to think this is a bit too specialized to my precise use case, this probably won't ever be made public
-
 while test $# -gt 0; do
         case "$1" in
                 -h|--help)
@@ -12,10 +8,14 @@ while test $# -gt 0; do
                         echo " "
                         echo "options:"
                         echo "-h, --help                show this help"
+			echo "--keep-vid		don't delete video"
                         echo " "
                         echo "dependencies: youtube-dl, Twitch-Chat-Downloader, and youtube-upload"
                         exit 0
                         ;;
+		--keep-vid)
+			export KEEP=true
+			;;
                 *)
                         export V=$1
                         break
@@ -27,17 +27,19 @@ if [ -z "$V" ]; then
   exit 1
 fi
 
-youtube-dl https://www.twitch.tv/videos/$V -o '/tmp/$V.mp4' >&2
+youtube-dl https://www.twitch.tv/videos/$V -o "~/Downloads/$V.mp4" >&2
 (cd ~/programs/Twitch-Chat-Downloader; python app.py -v $V --format srt >&2)
 youtube-upload \
   --title="$(youtube-dl --get-filename -o '%(title)s' https://www.twitch.tv/videos/$V)" \
-  --description="https://www.twitch.tv/$(youtube-dl --get-filename -o '%(uploader_id)s' https://www.twitch.tv/videos/$V)\n\nRecorded on $(date -d $(youtube-dl --get-filename -o '%(upload_date)s' https://www.twitch.tv/videos/$V) +%F).\n\nTurn on subtitles for twitch chat!" \
+  --description="https://www.twitch.tv/$(youtube-dl --get-filename -o '%(uploader_id)s' https://www.twitch.tv/videos/$V)\n\nRecorded on $(date -d $(youtube-dl --get-filename -o '@%(timestamp)s' https://www.twitch.tv/videos/$V) +%F).\n\nTurn on subtitles for twitch chat!" \
   --category=Gaming \
   --tags="deadbones, deadbones5, twitch, drinking, FDN, friday night drinking" \
   --recording-date="$(date -d $(youtube-dl --get-filename -o '@%(timestamp)s' https://www.twitch.tv/videos/$V) +%FT%T.0Z)" \
   --default-language="en" \
   --default-audio-language="en" \
-  /tmp/$V.mp4 >&2
+  ~/Downloads/$V.mp4 >&2
 # TODO: upload captions file
-rm /tmp/$V.mp4
+if [ -n $KEEP ]; then
+	rm ~/Downloads/$V.mp4
+fi
 # rm ~/programs/Twitch-Chat-Downloader/chats/v$V.srt

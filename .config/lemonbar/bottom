@@ -3,7 +3,7 @@
 source ~/.config/lemonbar/setup
 
 while true; do
-    echo "$(mpd) %{r} $(battery) $(wifi_ssid) $(volume) %{B$BACKGROUND_COLOR} %{F$WIFI_COLOR} $SEP $(printf '%b' "\uf073") %{F$FOREGROUND_COLOR} $(date +'%A, %b %d') %{F$WIFI_COLOR} $SEP $(printf '%b' "\uf017") %{F$FOREGROUND_COLOR} $(date +'%I:%M') $SEP %{B F-}"
+    echo "$(mpd) %{r} $(battery) $(bluetooth) $(wifi_ssid) $(volume) %{B$BACKGROUND_COLOR} %{F$WIFI_COLOR} $SEP $(printf '%b' "\uf073") %{F-} $(date +'%A, %b %d') %{F$WIFI_COLOR} $SEP $(printf '%b' "\uf017") %{F-} $(date +'%I:%M') $SEP %{B- F-}"
     sleep 1s
 done |
 

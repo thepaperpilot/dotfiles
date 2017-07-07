@@ -1,14 +1,14 @@
 #!/bin/bash
 
 FONT2="Terminus:size=10"
-FONT1="FontAwesome:size=10"
+FONT1="FontAwesome:size=14"
 
-BACKGROUND_COLOR="#FF2A303B"
-FOREGROUND_COLOR="#FFb3bdcb"
+BACKGROUND_COLOR="#2A303B"
+FOREGROUND_COLOR="#b3bdcb"
 
-COLOR1="#ffcc6666"
-COLOR2="#ffb5bd68"
-COLOR3="#ff969896"
+COLOR1="#cc6666"
+COLOR2="#b5bd68"
+COLOR3="#969896"
 
 BLACK_COLOR="#000000"
 RED_COLOR="#999999"
@@ -36,7 +36,7 @@ volume(){
     if amixer get Master | grep -q off; then
         echo "%{F$RED_COLOR A:amixer sset Master unmute:}$(printf '%b' "\uf026") $VOLUME%{A F-} $SEP $SEP"
     else
-	echo "%{F$BLUE_COLOR A:amixer sset Master mute:}$(printf '%b' "\uf028") $VOLUME%{A F-} $SEP $SEP"
+		echo "%{F$BLUE_COLOR A:amixer sset Master mute:}$(printf '%b' "\uf028") $VOLUME%{A F-} $SEP $SEP"
     fi
 }
 
@@ -67,5 +67,13 @@ battery() {
 
 load_avg() {
     AVGLOAD=$(cut -d " " -f 1-3 /proc/loadavg)
-    echo "%{F$BLUE_COLOR}$(printf '%b' "\f0ae") $AVGLOAD%{F-} $SEP $SEP"
+    echo "%{F$BLUE_COLOR}$(printf '%b' "\uf0ae") $AVGLOAD%{F-} $SEP $SEP"
+}
+
+bluetooth() {
+	if [ "$(pacmd list-sinks | grep E9_08_EF_5C_10_C6)" != "" ]; then
+		echo "%{F$BLUE_COLOR A:echo disconnect E9\:08\:EF\:5C\:10\:C6 | bluetoothctl:}$(printf '%b' "\uf293") BlueFit M1%{A F-} $SEP $SEP"
+	else
+		echo "%{F$RED_COLOR A:echo connect E9\:08\:EF\:5C\:10\:C6 | bluetoothctl:}$(printf '%b' "\uf293") BlueFit M1%{A F-} $SEP $SEP"
+	fi
 }
